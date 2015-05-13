@@ -97,7 +97,7 @@ class FinatraServer extends FinatraTwitterServer {
       .bindTo(new InetSocketAddress(config.sslPort().toLong.toInt))
       .name("https")
       .tls(config.certificatePath(), config.keyPath())
-    serverBuilder.build(service)
+    secureServer = Some(serverBuilder.build(service))
     log.info("http server started on port: " + config.sslPort)
   }
 
@@ -112,7 +112,7 @@ class FinatraServer extends FinatraTwitterServer {
       .codec(createCodec)
       .bindTo(new InetSocketAddress(config.port().toLong.toInt))
       .name("http")
-    serverBuilder.build(service)
+    server = Some(serverBuilder.build(service))
     log.info("http server started on port: " + config.port())
   }
 
