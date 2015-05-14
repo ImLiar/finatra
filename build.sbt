@@ -2,9 +2,9 @@ organization := "com.twitter"
 
 name := "finatra"
 
-version := "0.15.5G"
+version := "0.16G"
 
-scalaVersion := "2.10.5"
+scalaVersion := "2.11.6"
 
 resolvers += Classpaths.typesafeReleases
 
@@ -24,13 +24,14 @@ scalacOptions ++= (
 libraryDependencies ++= Seq(
   "com.twitter" %% "twitter-server" % "1.10.0",
   "com.twitter" %% "finagle-stats" % "6.25.0",
-  "commons-codec" % "commons-codec" % "1.9",
+  "commons-codec" % "commons-codec" % "1.10",
   "commons-io" % "commons-io" % "2.4",
   "com.fasterxml.jackson.core" % "jackson-core" % "2.4.0",
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.4.0",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.4.0",
-  "com.github.spullara.mustache.java" % "compiler" % "0.8.14",
-  "org.scalatest" % "scalatest_2.10" % "2.2.4"
+  "com.github.spullara.mustache.java" % "compiler" % "0.9.0",
+  "com.github.spullara.mustache.java" % "scala-extensions-2.11" % "0.9.0",
+  "org.scalatest" % "scalatest_2.11" % "2.2.4"
 )
 
 publishTo := Some(Resolver.file("file", new File("/home/liar/work/glopart-lib/mvn")))
